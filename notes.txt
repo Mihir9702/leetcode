@@ -1,0 +1,73 @@
+[X] Array / Strings
+[X] Two Pointers
+[X] Sliding Window
+[X] Matrix
+[X] Hashmap
+[] Intervals
+[X] Stack
+[X] Linked List
+[] Binary Tree General
+[] Binary Tree BFS
+[] Binary Search Tree
+[] Graph General
+[] Graph BFS
+[] Tree
+[] Backtracking
+[X] Divide & Conquer
+[] Kadane's Algorithm
+[] Dijkstra's Algorithm
+[X] Binary Search
+[] Heap
+[] Bit Manipulation
+[X] Math
+[] 1D DP
+[] Multidimensional DP
+
+
+* Sliding Window - O(n)
+  - let temp = nums[i]
+  - nums[i] = nums[j]
+  - nums[j] = temp
+
+* Two Pointers - O(n)
+  - for (let i = 0, j < nums.length - 1; i >= j; i++, j--) {}
+  - let count = 0
+  - for (let i = 0; i < nums.length; i++) { count++ }
+
+* Matrix - O(n^2)
+  - board[r][c]
+  - if board[r][c] in rows[r] or board[r][c] in squares[(r // 3, c // 3)] 
+  - HashSets
+
+* Stack - O(n)
+  - stack = [] (push & pop mutates array)
+  - .pop() - removes last item
+  - .push() - adds element to end of array
+  - [C, B, A] -> (a.pop(), a) -> (A, [C, B])
+  - if theres one thing and your checking for another thing that matches
+  - if you need to go backwards one and then return
+
+* Binary Search - O(log n)
+  - l, r = 0, row.length - 1
+  - while l <= r
+  - m = (l + r) // 2
+  - if target > arr[m] -> l = m + 1
+  - else -> r = m - 1
+
+* Linked List - O(n)
+  - head, this.val, this.next
+  - this.next can point to null
+  - while (head.next)
+
+* HashMap - O(n)
+  - map = {} or new Map() or new Set()
+  - can be HashSet
+  - if (!map[e]) map[e] = 0
+  - else map[e]++
+
+* Merge Sort - O(log n)
+  - edge case if (!head || head.next) return head
+  - split list in 2 halves, right = getMid(head) -> tmp = right.next -> right.next = null -> right = tmp
+  - left = recursion(left), right = recursion(right) -> merge(left, right)
+  - getMid(head) -> let slow = head, fast = head.next -> while (fast && fast.next) -> fast = fast.next.next -> return slow
+  - merge(left, right) -> new ListNode() -> while (left && right) -> if (left.val < right.val) tail.next = left, left = left.next
