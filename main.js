@@ -347,3 +347,36 @@ for (const str of strs) {
   else stack.push(str);
 }
 console.log(stack);
+
+/**
+ * Given word, return the next alphabetically greater
+ * string in all permutations of that word. If there is no
+ * greater permutation, return the string 'no answer' instead.
+ *
+ * Ex. word = 'baca'
+ * [aabc, aacb, abac, abca, acab, acba, baac, baca, bcaa, caab, caba, cbaa]
+ * * temp = a
+ * * baca - > bcca -> bcaa
+ * * i = 2, j = 3
+ * *
+ * next greater permutation: 'bcaa'
+ *
+ * @param {String} word
+ * @return {String}
+ */
+function nextPermutation(word) {
+  // sliding window javascript
+  word = word.split("");
+  // ['b', 'c', 'a', 'a']
+
+  // ! this doesn't work
+  for (let i = 1, j = i + 1; j < word.length; i++, j++) {
+    let temp = word[i];
+    word[i] = word[j];
+    word[j] = temp;
+  }
+  // 'bcaa'
+  return word.join("");
+}
+
+console.log(nextPermutation("baca"));

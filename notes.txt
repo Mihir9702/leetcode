@@ -1,11 +1,11 @@
 [X] Array / Strings
 [X] Two Pointers
 [X] Sliding Window
-[X] Matrix
+[] Matrix
 [X] Hashmap
 [] Intervals
 [X] Stack
-[X] Linked List
+[] Linked List
 [] Binary Tree General
 [] Binary Tree BFS
 [] Binary Search Tree
@@ -24,22 +24,22 @@
 [] Multidimensional DP
 
 
-* Sliding Window - O(n)
+* Sliding Window - O(n) (JavaScript)
   - let temp = nums[i]
   - nums[i] = nums[j]
   - nums[j] = temp
 
-* Two Pointers - O(n)
+* Two Pointers - O(n) (JavaScript)
   - for (let i = 0, j < nums.length - 1; i >= j; i++, j--) {}
   - let count = 0
   - for (let i = 0; i < nums.length; i++) { count++ }
 
-* Matrix - O(n^2)
+* Matrix - O(n^2) (Python)
   - board[r][c]
   - if board[r][c] in rows[r] or board[r][c] in squares[(r // 3, c // 3)] 
   - HashSets
 
-* Stack - O(n)
+* Stack - O(n) (JavaScript)
   - stack = [] (push & pop mutates array)
   - .pop() - removes last item
   - .push() - adds element to end of array
@@ -54,20 +54,31 @@
   - if target > arr[m] -> l = m + 1
   - else -> r = m - 1
 
-* Linked List - O(n)
+* Linked List - O(n) (JavaScript)
   - head, this.val, this.next
   - this.next can point to null
   - while (head.next)
 
-* HashMap - O(n)
+* HashMap - O(n) (JavaScript) 
   - map = {} or new Map() or new Set()
   - can be HashSet
   - if (!map[e]) map[e] = 0
   - else map[e]++
+  - Python -> if e not in map:
 
-* Merge Sort - O(log n)
+* Merge Sort - O(log n) (JavaScript)
   - edge case if (!head || head.next) return head
   - split list in 2 halves, right = getMid(head) -> tmp = right.next -> right.next = null -> right = tmp
   - left = recursion(left), right = recursion(right) -> merge(left, right)
   - getMid(head) -> let slow = head, fast = head.next -> while (fast && fast.next) -> fast = fast.next.next -> return slow
   - merge(left, right) -> new ListNode() -> while (left && right) -> if (left.val < right.val) tail.next = left, left = left.next
+
+* Backtracking O(m^n)
+  - recursion decision tree
+  - checking for all possible combinations
+  - look for base case
+
+* Depth First Search 
+  - remember add copy of arr
+  - recursion, incremental
+  - decision tree

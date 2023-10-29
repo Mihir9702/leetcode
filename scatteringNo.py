@@ -53,3 +53,9 @@ def scatteringNo(start, num):
     return res
 
 print(scatteringNo(100, 500))
+
+arr = ["bob", "alice", "jane", "doe"]
+ts = arr[1:3]
+last = arr[-1]
+arr.sort(key=lambda x: len(x))
+print(arr)
